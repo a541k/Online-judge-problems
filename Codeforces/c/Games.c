@@ -1,0 +1,29 @@
+#include<stdio.h>
+main()
+{
+    int n,a[110],h[110],i,j,c=0;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+        scanf("%d%d",&h[i],&a[i]);
+    for(i=1;i<=n;i++)
+    {
+        for(j=i+1;j<=n;j++)
+        {
+            if(a[i]==h[j])
+            {
+                c++;
+            }
+        }
+    }
+    for(i=n;i>=1;i--)
+    {
+        for(j=i-1;j>=1;j--)
+        {
+            if(a[i]==h[j])
+            {
+                c++;
+            }
+        }
+    }
+    printf("%d",c);
+}

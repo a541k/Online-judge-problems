@@ -1,0 +1,24 @@
+#include<stdio.h>
+main()
+{
+    int n,a,b,c,d,i,j=1,x;
+    scanf("%d",&n);
+    for(j=n+1;j<=10000;j++)
+    {
+        i=j;
+        a=i%10;
+        i=i/10;
+        b=i%10;
+        i=i/10;
+        c=i%10;
+        i=i/10;
+        d=i%10;
+        i=i/10;
+        if(a!=b&&a!=c&&a!=d&&b!=c&&b!=d&&c!=d)
+        {
+            break;
+        }
+    }
+    x=d*1000+c*100+b*10+a;
+    printf("%d",x);
+}

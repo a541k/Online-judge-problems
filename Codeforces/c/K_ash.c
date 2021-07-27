@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+main()
+{
+    char a[110],s[]="abcdefghijklmnopqrstuvwxyz";
+    int i,j,n,t,x=0;
+    scanf("%d",&n);
+    getchar();
+    gets(a);
+    for(i=0;i<=n-1;i++)
+    {
+        if(isupper(a[i]))
+            a[i]=tolower(a[i]);
+    }
+    for(i=0;i<=n-1;i++)
+    {
+        for(j=i+1;j<=n-1;j++)
+        {
+            if(a[i]>a[j])
+            {
+                t=a[i];
+                a[i]=a[j];
+                a[j]=t;
+            }
+        }
+    }
+   for(i=0;i<=n-1;i++)
+   {
+       if(a[i]==s[x])
+        x++;
+   }
+   if(x==26)
+    printf("YES");
+   else
+    printf("NO");
+}

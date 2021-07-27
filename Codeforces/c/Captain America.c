@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<string.h>
+main()
+{
+    char a[1006],b[1008],c[10066],t;
+    int i,j,l,k=0;
+    while(scanf("%s%s",a,b)!=EOF)
+    {
+        for(i=0;i<strlen(a);i++)
+        for(j=i+1;j<strlen(a)-1;j++)
+            if(a[j]==a[i])
+                a[j]='?';
+
+        for(i=0;i<strlen(a);i++)
+        {
+            for(j=0;j<strlen(b);j++)
+            {
+                if(a[i]==b[j])
+                {
+                    c[k]=a[i];
+                    k++;
+                    break;
+                }
+            }
+        }
+        for(i=0;i<strlen(c);i++)
+        {
+            for(j=i+1;j<strlen(c);j++)
+            {
+                if(c[j]<c[i])
+                {
+                    t=c[i];
+                    c[i]=c[j];
+                    c[j]=t;
+                }
+            }
+        }
+        printf("%s\n",c);
+    }
+}
