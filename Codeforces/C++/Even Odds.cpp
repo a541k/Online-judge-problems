@@ -1,0 +1,56 @@
+#include<iostream>
+main()
+{
+    using namespace std;
+    long long int n,k,l=0,i,j=-1,p,a;
+    cin >> n >>k;
+    if(n%2==0)
+    {
+        for(i=1;i<=n;i++)
+        {
+            if(i<=n/2)
+            {
+                j=j+2;
+                if(i==k)
+                   {
+                    a=j;
+                   break;
+                   }
+            }
+            if(i>n/2)
+            {
+               l=l+2;
+               if(i==k)
+               {
+                   a=l;
+                break;
+               }
+            }
+        }
+    }
+    if(n%2!=0)
+    {
+        for(i=1;i<=n;i++)
+        {
+            if(i<=n/2+1)
+            {
+                j=j+2;
+                if(i==k)
+                   {
+                    a=j;
+                   break;
+                   }
+            }
+            if(i>n/2+1)
+            {
+               l=l+2;
+               if(i==k)
+               {
+                   a=l;
+                break;
+               }
+            }
+        }
+    }
+    cout<<a;
+}

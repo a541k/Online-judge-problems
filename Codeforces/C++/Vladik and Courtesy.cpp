@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+main()
+{
+    long long a,b,i=1,c,j=0,k=0;
+    cin>>a>>b;
+    while(1)
+    {
+        if(i%2==1)
+            a=a-i;
+        if(i%2==0)
+            b=b-i;
+        if(a<0)
+        {
+            j=1;
+            break;
+        }
+        if(b<0)
+        {
+            k=1;
+            break;
+        }
+        i++;
+    }
+    if(j==1)
+        cout<<"Vladik";
+     if(k==1)
+        cout<<"Valera";
+}
